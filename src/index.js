@@ -7,11 +7,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.send("Simple API Gateway")
+    res.send("Api gateway alive")
 })
 
 app.use(router)
 
-console.log("Simple API Gateway run on localhost:8080")
+console.log("API Gateway run on localhost:8080")
 
-app.listen(8080);
+app.listen(8081);

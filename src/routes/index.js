@@ -1,14 +1,13 @@
-var express = require('express');
-var router = express.Router()
-var heroService = require('./heroRoutes')
+var express = require("express");
+var router = express.Router();
+var heroService = require("./hero/heroRoutes");
 
+router.use(
+  "/hero",
+  function (req, res, next) {
+    next();
+  },
+  heroService
+);
 
-router.use((req, res, next) => {
-    console.log("Called: ", req.path)
-    next()
-})
-
-router.use(heroService)
-
-
-module.exports = router
+module.exports = router;
