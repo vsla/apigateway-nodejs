@@ -2,14 +2,14 @@ var express = require("express");
 var router = express.Router();
 var countryAdapter = require("./countryAdapter");
 
-router.get("/", async (req, res) => {
+router.get("/", (req, res) => {
   countryAdapter.get("pokemon/ditto").then((response) => {
     res.json(response.data);
   });
 });
 
 router.post("/newCountry", (req, res) => {
-  countryAdapter.get("pokemon/ditto").then((response) => {
+  countryAdapter.post("pokemon/ditto", req.body).then((response) => {
     res.json(response.data);
   });
 });
